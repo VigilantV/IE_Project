@@ -1,0 +1,155 @@
+@use "../../global/variables" as *;
+@use "../../global/mixins" as *;
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+.certificate {
+  &_section {
+    display: flex;
+    column-gap: 1.5vw;
+    padding: 5vw 3vw;
+    background-color: white;
+  }
+
+  &_img {
+    @include devices(desktop) {
+      width: 15.5vw;
+      margin: 1vw;
+      transition: 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: rgba(211, 76, 76, 0.8) 0 5px 15px;
+      }
+    }
+
+    @include devices(mobile) {
+      height: 50vh;
+      padding-bottom: 2vh;
+    }
+  }
+}
+
+.arrow {
+  width: 3vw;
+}
+
+.card {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+  background-color: white;
+
+  @include devices(desktop) {
+    top: 6.5vw;
+    left: 34vw;
+    height: 37.5vw;
+    width: 32vw;
+    border-radius: 0.7vw;
+  }
+
+  @include devices(mobile) {
+    top: 12vh;
+    left: 10vw;
+    height: 68vh;
+    width: 80vw;
+    border-radius: 0.7vh;
+  }
+}
+
+.button {
+  border: 0;
+
+  @include devices(desktop) {
+    width: 6vw;
+    height: 2.2vw;
+    font-size: 1vw;
+    @include buttonHover($smokyWhite, $lightRed, $lightRed, $darkGray);
+  }
+
+  @include devices(mobile) {
+    width: 21vw;
+    height: 3.8vh;
+    font-size: 3vw;
+    border-radius: 0.5vh;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $smokyWhite;
+    background-color: $lightRed;
+  }
+
+  &_top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @include devices(desktop) {
+      margin: 1.2vw 6vw;
+    }
+
+    @include devices(mobile) {
+      margin: 1.5vh 6vw;
+    }
+  }
+
+  &_close {
+    align-self: center;
+
+    @include devices(desktop) {
+      margin-top: 1.2vw;
+    }
+
+    @include devices(mobile) {
+      margin-top: 1.5vh;
+    }
+  }
+}
+
+.counter_text {
+  @include devices(desktop) {
+    font-size: 1.2vw;
+  }
+
+  @include devices(mobile) {
+    font-size: 4vw;
+  }
+}
+
+.modal_img {
+  @include devices(desktop) {
+    height: 28vw;
+    margin: 0 1vw;
+  }
+
+  @include devices(mobile) {
+    height: 55vh;
+    margin: 0 1.5vw;
+  }
+}
+
+.title {
+  font-size: 6vw;
+  text-align: center;
+  margin-top: 5vh;
+  color: $smokyWhite;
+}
+
+.scrollbar_section {
+  display: flex;
+  margin: 2vh 5vw;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    height: 0.3vh;
+  }
+}

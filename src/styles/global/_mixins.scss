@@ -1,0 +1,99 @@
+@use "../global/variables" as *;
+
+@mixin devices($device) {
+  @if $device == desktop {
+    @media only screen and (min-width: 581px) {
+      @content;
+    }
+  } @else if $device == mobile {
+    @media only screen and (max-width: 580px) {
+      @content;
+    }
+  }
+}
+
+@mixin linearHover($firstColor: $smokyWhite, $secondColor: $lightRed) {
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-clip: text;
+  text-decoration: none;
+  color: $firstColor;
+  background-image: linear-gradient(
+    to right,
+    $secondColor,
+    $secondColor 50%,
+    $firstColor 50%
+  );
+  transition: background-position 0.3s ease-in-out;
+
+  &:hover {
+    -webkit-text-fill-color: transparent;
+    background-position: 0;
+  }
+}
+
+@mixin buttonHover(
+  $textColor: $smokyWhite,
+  $backgroundColor: $lightRed,
+  $hoverTextColor: $lightRed,
+  $hoverBackgroundColor: $smokyWhite
+) {
+  border-radius: 0.5vw;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $textColor;
+  background-color: $backgroundColor;
+  transition: color 1s, background-color 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    color: $hoverTextColor;
+    background-color: $hoverBackgroundColor;
+  }
+}
+
+@mixin copyPopUP() {
+  position: relative;
+  border-radius: 50%;
+  text-align: center;
+  color: $lightRed;
+  background-color: $smokyWhite;
+  opacity: 1;
+  transition: 0.2s;
+
+  @include devices(desktop) {
+    width: 5.5vw;
+    height: 3.5vw;
+    padding-top: 1vw;
+    font-size: 1.2vw;
+  }
+
+  @include devices(mobile) {
+    width: 13vw;
+    height: 4.5vh;
+    padding-top: 1vh;
+    font-size: 3vw;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $smokyWhite;
+    transform: rotate(-10deg);
+
+    @include devices(desktop) {
+      top: 2.6vw;
+      right: 3.9vw;
+      width: 1.1vw;
+      height: 0.6vw;
+    }
+
+    @include devices(mobile) {
+      top: 3.7vh;
+      right: 8.6vw;
+      width: 2.5vw;
+      height: 0.8vh;
+    }
+  }
+}

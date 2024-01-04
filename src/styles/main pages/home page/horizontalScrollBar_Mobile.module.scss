@@ -1,0 +1,19 @@
+@use "../../global/variables" as *;
+
+.title {
+  font-size: 5.5vw;
+  text-align: center;
+  margin-top: 5vh;
+  color: $smokyWhite;
+}
+
+.scrollbar_section {
+  display: flex;
+  margin: 2vh 5vw;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    height: 0.3vh;
+  }
+}

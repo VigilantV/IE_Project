@@ -1,0 +1,78 @@
+@use "../../global/variables" as *;
+@use "../../global/mixins" as *;
+
+.title {
+  font-weight: bold;
+  color: $smokyWhite;
+
+  @include devices(desktop) {
+    font-size: 2.7vw;
+    margin-top: 2vw;
+    margin-left: 10vw;
+  }
+
+  @include devices(mobile) {
+    font-size: 6vw;
+    text-align: center;
+    margin-top: 3vh;
+  }
+}
+
+.article {
+  display: flex;
+
+  @include devices(desktop) {
+    margin: 4vw 5vw 0 10vw;
+    letter-spacing: 0.1vw;
+  }
+
+  @include devices(mobile) {
+    flex-direction: column;
+    margin: 4vh 5vw 0 10vw;
+    letter-spacing: 0.2vw;
+  }
+
+  &_title {
+    text-transform: uppercase;
+
+    @include devices(desktop) {
+      width: 17vw;
+      text-align: left;
+      font-size: 1.6vw;
+      color: $lightGray;
+      @include linearHover($lightGray);
+    }
+
+    @include devices(mobile) {
+      font-size: 4.5vw;
+      margin-bottom: 1vh;
+      color: $lightRed;
+    }
+  }
+
+  &_text {
+    color: $smokyWhite;
+
+    @include devices(desktop) {
+      width: 80%;
+      font-size: 1.2vw;
+    }
+
+    @include devices(mobile) {
+      width: 92%;
+      font-size: 3.3vw;
+      line-height: 2.7vh;
+    }
+
+    ul {
+      @include devices(desktop) {
+        padding-left: 1.5vw;
+        margin: 1.2vw 0;
+      }
+
+      @include devices(mobile) {
+        padding-left: 2.5vw;
+      }
+    }
+  }
+}

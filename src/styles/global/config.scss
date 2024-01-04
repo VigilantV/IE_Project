@@ -1,0 +1,41 @@
+@use "./variables" as *;
+
+@font-face {
+  font-family: "Lexend";
+  src: local("Lexend"),
+    url(../../font/Lexend-VariableFont_wght.ttf) format("truetype");
+}
+
+:root {
+  --scroll: scroll;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: lexend;
+}
+
+html {
+  scrollbar-color: $lightRed $darkGray;
+  scrollbar-width: thin;
+}
+
+body {
+  overflow-y: var(--scroll);
+  overflow-x: hidden;
+  background-color: $darkGray;
+}
+
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+::-webkit-scrollbar-track {
+  background: $darkGray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $lightRed;
+}

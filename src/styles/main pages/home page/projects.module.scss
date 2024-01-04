@@ -1,0 +1,22 @@
+@use "../../global/variables" as *;
+
+.projects {
+  color: $smokyWhite;
+
+  &_title {
+    text-align: center;
+    font-size: 1.7vw;
+    font-weight: bold;
+    margin: 4vw 0 2vw;
+  }
+}
+
+.slider {
+  display: flex;
+  column-gap: 1.5vw;
+  padding: 2vw 3vw;
+
+  &_arrow {
+    width: 3vw;
+  }
+}

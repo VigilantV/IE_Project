@@ -1,0 +1,225 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+.footer {
+  display: flex;
+  background-color: black;
+  color: $smokyWhite;
+
+  @include devices(desktop) {
+    justify-content: space-between;
+    padding: 2vw 10vw 2vw 6vw;
+  }
+
+  @include devices(mobile) {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 4vh 10vw 4vh;
+  }
+}
+
+.info_wrapper {
+  @include devices(mobile) {
+    text-align: center;
+  }
+}
+
+.logo {
+  @include devices(desktop) {
+    width: 9vw;
+  }
+
+  @include devices(mobile) {
+    width: 22vw;
+    margin-right: 3vw;
+  }
+}
+
+.second_title {
+  @include devices(desktop) {
+    font-size: 1.6vw;
+  }
+
+  @include devices(mobile) {
+    font-size: 5.8vw;
+  }
+}
+
+.address {
+  @include devices(desktop) {
+    font-size: 1.2vw;
+    padding-top: 0.3vw;
+  }
+
+  @include devices(mobile) {
+    font-size: 3.5vw;
+    padding-top: 1vh;
+  }
+}
+
+.links {
+  & > div {
+    display: flex;
+    margin-top: -1vw;
+
+    @include devices(desktop) {
+      column-gap: 0.5vw;
+    }
+
+    @include devices(mobile) {
+      justify-content: center;
+      column-gap: 1vw;
+      margin-left: 13vw;
+    }
+  }
+
+  & > div > p {
+    margin-top: 2vw;
+
+    @include devices(desktop) {
+      font-size: 1.2vw;
+      padding-top: 0.5vw;
+      @include linearHover();
+    }
+
+    @include devices(mobile) {
+      font-size: 3.8vw;
+      padding-top: 1.5vh;
+    }
+  }
+
+  & > div > div {
+    @include copyPopUP();
+  }
+}
+
+.link_icons {
+  display: flex;
+
+  @include devices(desktop) {
+    padding: 1.5vw 0 0;
+    gap: 1.5vw;
+  }
+
+  @include devices(mobile) {
+    padding: 3vh 0 0;
+    gap: 3vw;
+  }
+}
+
+.icon {
+  border-radius: 50%;
+
+  @include devices(desktop) {
+    width: 3vw;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: #d72638;
+    }
+  }
+
+  @include devices(mobile) {
+    width: 9vw;
+  }
+}
+
+.input_title {
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include devices(desktop) {
+    font-size: 1.6vw;
+  }
+
+  @include devices(mobile) {
+    font-size: 5.5vw;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include devices(desktop) {
+    row-gap: 1vw;
+    padding: 1vw 0;
+  }
+
+  @include devices(mobile) {
+    row-gap: 1.5vh;
+    padding: 1.5vh 0;
+  }
+}
+
+.input_elements {
+  border: 1px solid $lightGray;
+  background-color: transparent;
+  color: $smokyWhite;
+
+  @include devices(desktop) {
+    width: 27vw;
+    font-size: 1.2vw;
+    padding: 0.8vw;
+    border-radius: 0.5vw;
+  }
+
+  @include devices(mobile) {
+    width: 66vw;
+    font-size: 3.5vw;
+    padding: 1.5vh 2vw;
+    border-radius: 0.5vh;
+  }
+
+  &::placeholder {
+    color: $lightGray;
+
+    @include devices(desktop) {
+      font-size: 1.2vw;
+    }
+
+    @include devices(mobile) {
+      font-size: 3.5vw;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    border-width: 2px;
+    caret-color: $smokyWhite;
+  }
+}
+
+textarea.input_elements {
+  resize: none;
+
+  @include devices(desktop) {
+    height: 14vw;
+  }
+
+  @include devices(mobile) {
+    height: 15vh;
+  }
+}
+
+.btn {
+  @include devices(desktop) {
+    width: 8vw;
+    font-size: 1.2vw;
+    padding: 0.5vw;
+    @include buttonHover($darkGray, $lightRed, $lightRed, $darkGray);
+  }
+
+  @include devices(mobile) {
+    width: 23vw;
+    font-size: 3.2vw;
+    font-weight: normal;
+    padding: 1.1vh 0.5vw;
+    border-radius: 1vh;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $darkGray;
+    background-color: $lightRed;
+  }
+}
