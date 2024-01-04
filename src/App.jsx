@@ -18,7 +18,7 @@ const App = () => {
   return (
     <>
       <ToastContainer />
-      <BrowserRouter basename={"/construction-company"}>
+      <BrowserRouter basename={"/IE_Project"}>
         <UseScrollToTop>
           <DeviceProvider>
             <MenuItemsListProvider>
